@@ -1,16 +1,15 @@
 import requests
 import streamlit as st 
 
-# Set the page configuration with a robot emoji as the icon
+# Dify API key and URL
+dify_api_key = "app-pDKDiDrZsMJv9vS2iVd8Bg1Y"
+url = "https://api.dify.ai/v1/chat-messages"
+
 st.set_page_config(
     page_title="ABU AI | Chat",  # Change the title here
     page_icon="🤖",  # Set the robot emoji as the favicon
     layout="wide",  # You can set layout to "centered" or "wide"
 )
-
-# Dify API key and URL
-dify_api_key = "app-pDKDiDrZsMJv9vS2iVd8Bg1Y"
-url = "https://api.dify.ai/v1/chat-messages"
 
 # Streamlit app title
 st.title("ABU AI")
@@ -31,32 +30,8 @@ for message in st.session_state.messages:
         else:
             st.markdown(f"<div style='background-color: #D1E7FF; border-radius: 10px; padding: 10px; margin: 5px 0; color: black;'>{message['content']}</div>", unsafe_allow_html=True)
 
-# Custom input box design
-input_placeholder = st.empty()  # Create a placeholder for the input box
-
-# Input for user prompt with enhanced design
-user_input = input_placeholder.text_input(
-    "Enter your question here...",
-    placeholder="Type your message...",
-    key="user_input",
-    label_visibility="collapsed",
-    help="Press Enter to send your message.",
-    style="""
-    background-color: #f0f0f0;  /* Light gray background */
-    border: 2px solid #4CAF50;   /* Green border */
-    border-radius: 10px;         /* Rounded corners */
-    padding: 10px;               /* Padding for comfort */
-    font-size: 16px;             /* Font size */
-    width: 100%;                 /* Full width */
-    box-shadow: 0px 0px 5px rgba(0,0,0,0.2); /* Shadow for depth */
-    """
-)
-
-# Button for sending input
-if st.button("Send", key="send_button"):
-    prompt = user_input
-else:
-    prompt = None
+# Input for user prompt
+prompt = st.chat_input("Enter your question here...")
 
 if prompt:
     with st.chat_message("user"):
