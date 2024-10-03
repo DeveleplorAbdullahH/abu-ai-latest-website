@@ -61,7 +61,6 @@ for message in st.session_state.messages:
         if message["role"] == "user":
             st.markdown(f"<div style='background-color: #E1FFC7; border-radius: 10px; padding: 10px; margin: 5px 0; color: black;'>{message['content']}</div>", unsafe_allow_html=True)
         else:
-            st.image("dorado.jpeg", width=50)
             st.markdown(f"<div style='background-color: #D1E7FF; border-radius: 10px; padding: 10px; margin: 5px 0; color: black;'>{message['content']}</div>", unsafe_allow_html=True)
 
 # Input for user prompt
