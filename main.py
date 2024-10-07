@@ -61,7 +61,7 @@ for message in st.session_state.messages:
         if message["role"] == "user":
             st.markdown(f"<div style='background-color: #E1FFC7; border-radius: 10px; padding: 10px; margin: 5px 0; color: black;'>{message['content']}</div>", unsafe_allow_html=True)
         else:
-            st.markdown(f"<div style='background-color: #D1E7FF; border-radius: 10px; padding: 10px; margin: 5px 0; color: black;'>{message['content']}</div>", unsafe_allow_html=True)
+            st.markdown(f"<div style='background-color: #0e5099; border-radius: 10px; padding: 10px; margin: 5px 0; color: black;'>{message['content']}</div>", unsafe_allow_html=True)
 
 # Input for user prompt
 prompt = st.chat_input("Enter your question here...")
