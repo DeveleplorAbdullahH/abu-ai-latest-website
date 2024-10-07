@@ -104,7 +104,7 @@ if prompt:
             st.error(f"An error occurred: {e}")
             full_response = "An error occurred while fetching the response."
 
-        message_placeholder.markdown(f"<div style='background-color: #D1E7FF; border-radius: 10px; padding: 10px; margin: 5px 0; color: black;'>{full_response}</div>", unsafe_allow_html=True)
+        message_placeholder.markdown(f"<div style='background-color: #0e5099; border-radius: 10px; padding: 10px; margin: 5px 0; color: black;'>{full_response}</div>", unsafe_allow_html=True)
 
         st.session_state.messages.append({"role": "assistant", "content": full_response})
 
